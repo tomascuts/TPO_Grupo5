@@ -2,6 +2,10 @@ package implementacion;
 
 import interfaz.ConjuntoMamushkaTDA;
 
+/****************/
+/****  EJ: 2 ****/
+/****************/
+
 public class ConjuntoMamushka implements ConjuntoMamushkaTDA {
 	
 	int[] a;
