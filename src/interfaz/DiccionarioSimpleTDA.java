@@ -1,7 +1,5 @@
 package interfaz;
 
-import interfazComplemento.ConjuntoTDA;
-
 public interface DiccionarioSimpleTDA {
 	public void inicializar();
 	public void agregar(int c,int v);

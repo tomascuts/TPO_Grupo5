@@ -1,7 +1,7 @@
 package implementacion;
 
 
-import interfazComplemento.ColaPrioridadTDA;
+import interfaz.ColaPrioridadTDA;
 
 public class ColaPrioridadEstatico implements ColaPrioridadTDA {
 	class Elemento{

@@ -46,8 +46,8 @@ public class TPO {
 		
 		/****************/
 		
-		ColaTDA cola = new Cola();
-		cola.inicializarCola();
+		ColaTDA cola = (ColaTDA) new Cola();
+		cola.inicializar();
 		
 		ColaTDA ejercicio8 = ColaSinRepetidos(cola);
 
@@ -59,13 +59,13 @@ public class TPO {
 	/****************/
 	public static ConjuntoTDA ElementosRepetidosPila(PilaTDA pila)  
 	{
-		ConjuntoTDA respuesta = new Conjunto(); 
+		ConjuntoTDA respuesta = (ConjuntoTDA) new Conjunto(); 
 		respuesta.inicializarConjunto();
 
-		ConjuntoTDA utilizados = new Conjunto();
+		ConjuntoTDA utilizados = (ConjuntoTDA) new Conjunto();
 		utilizados.inicializarConjunto();
 		
-		PilaTDA pilaAux = new Pila();
+		PilaTDA pilaAux = (PilaTDA) new Pila();
 		pilaAux.inicializa();		
 		
 		//Comenzamos a recorrer la pila, elemento por elemento hasta que quede vacia.
@@ -101,11 +101,11 @@ public class TPO {
 	/****************/
 	public static ColaTDA ColaSinRepetidos(ColaTDA cola)  
 	{
-		ConjuntoTDA conjunto = new Conjunto(); 
+		ConjuntoTDA conjunto = (ConjuntoTDA) new Conjunto(); 
 		conjunto.inicializarConjunto();
 		
-		ColaTDA respuesta = new Cola(); 
-		cola.inicializarCola();	
+		ColaTDA respuesta = (ColaTDA) new Cola(); 
+		cola.inicializar();	
 		
 		//Comenzamos a recorrer la cola, elemento por elemento hasta que quede vacia.
 		while(!cola.colaVacia()) 
@@ -179,5 +179,56 @@ public class TPO {
 		return ds;
 	}
 	
+	
+	/****************/
+	/****  EJ: 11 ****/
+	/****************/
+
+	public class ConvertirDicMultipleACola {
+
+		 public static void main(String[] args) {
+		        // Inicializar diccionario múltiple
+		        DiccionarioMultipleTDA dicMultiple = new DiccionarioMultiple();
+		        dicMultiple.inicializarDiccionario();
+
+		        dicMultiple.agregar(1, 2);
+		        dicMultiple.agregar(1, 3);
+		        dicMultiple.agregar(2, 4);
+		        dicMultiple.agregar(2, 5);
+		        dicMultiple.agregar(3, 5);
+		        dicMultiple.agregar(3, 2);
+
+		        // Convertir diccionario múltiple a cola sin repeticiones
+		        ColaTDA cola = (ColaTDA) new Cola();
+		        cola.inicializar();
+
+		        ConjuntoTDA valoresUnicos = (ConjuntoTDA) new Conjunto();
+		        valoresUnicos.inicializarConjunto();
+
+		        ConjuntoTDA claves = (ConjuntoTDA) dicMultiple.claves();
+		        while (!claves.conjuntoVacio()) {
+		            int clave = claves.elegir();
+		            claves.sacar(clave);
+
+		            ConjuntoTDA valores = (ConjuntoTDA) dicMultiple.recuperar(clave);
+		            while (!valores.conjuntoVacio()) {
+		                int valor = valores.elegir();
+		                valores.sacar(valor);
+		                if (!valoresUnicos.pertenece(valor)) {
+		                    valoresUnicos.agregar(valor);
+		                    cola.acolar(valor);
+		                }
+		            }
+		        }
+
+		        // Imprimir cola
+		        while (!cola.colaVacia()) {
+		            System.out.print(cola.primero() + " ");
+		            cola.desacolar();
+		        }
+		    }
+		
+	}
+
 
 }
