@@ -2,14 +2,45 @@ package uso;
 
 import tda.*;
 import imple.*;
+import implementacion.DiccionarioSimpleEstatico;
+import implementacion.PilaEstatica;
+import implementacion.ConjuntoEstatico;
+import interfaz.DiccionarioSimpleTDA;
+import interfaz.PilaTDA;
+import interfaz.ColaTDA;
+import interfaz.ConjuntoTDA;
 
 public class TPO {
 
+	
+	public static float ejercicio6(PilaTDA p) {//el metodo es lineal puesto que posee un ciclo
+		PilaTDA aux = new PilaEstatica();
+		aux.inicializa();
+		int pares=0;
+		int total=0;
+		while(!p.pilaVacia()) {
+			int n = p.tope();
+			if(n % 2 == 0) 
+				pares++;
+			total++;
+			aux.apilar(p.tope());
+			p.desapilar();
+		}
+		float porcentaje = ((float)pares/total)*100 ;
+		while(!aux.pilaVacia()) {
+			p.apilar(aux.tope());
+			aux.desapilar();
+		}
+	
+		
+		return porcentaje;
+	}
+	
 	public static void main(String[] args) {
 		
 
-		PilaTDA pila = new Pila();
-		pila.inicializarPila();	
+		PilaTDA pila = (PilaTDA) new Pila();
+		pila.inicializa();	
 		
 		ConjuntoTDA ejercicio7 = ElementosRepetidosPila(pila);
 		
@@ -35,7 +66,7 @@ public class TPO {
 		utilizados.inicializarConjunto();
 		
 		PilaTDA pilaAux = new Pila();
-		pilaAux.inicializarPila();		
+		pilaAux.inicializa();		
 		
 		//Comenzamos a recorrer la pila, elemento por elemento hasta que quede vacia.
 		while(!pila.pilaVacia()) 
@@ -93,6 +124,60 @@ public class TPO {
 		}			
 		
 		return respuesta;
-	}	
+	}
+	
+	public static ConjuntoTDA ejercicio9(ColaTDA c, PilaTDA p) {//el metodo es polinomico puesto que posee un ciclo dentro de otro
+		ConjuntoTDA res = new ConjuntoEstatico();
+		ConjuntoTDA auxC = new ConjuntoEstatico();
+		ConjuntoTDA auxP = new ConjuntoEstatico();
+		res.inicializarConjunto();
+		auxC.inicializarConjunto();
+		auxP.inicializarConjunto();
+		while(!p.pilaVacia()) {
+			auxP.agregar(p.tope());
+			p.desapilar();
+		}
+		while(!c.colaVacia()) {
+			auxC.agregar(c.primero());
+			c.desacolar();
+		}
+		while(!auxC.conjuntoVacio()) {
+			int v = auxC.elegir();
+			if(auxP.pertenece(v))
+				res.agregar(v);
+			auxC.sacar(v);
+		}
+		
+		return res;
+	}
+	
+	public static DiccionarioSimpleTDA ejercicio10(PilaTDA p) {//el metodo es polinomico puesto que posee un ciclo dentro de otro
+		DiccionarioSimpleTDA ds = new DiccionarioSimpleEstatico();
+		PilaTDA aux = new PilaEstatica();
+		ds.inicializar();
+		aux.inicializa();
+		while(!p.pilaVacia()) {
+			int v = p.tope();
+			p.desapilar();
+			int cont = 1;
+			while(!p.pilaVacia()) {
+				if(v == p.tope()) {
+					cont++;
+					p.desapilar();
+				}
+				else {
+					aux.apilar(p.tope());
+					p.desapilar();
+				}
+			}
+			ds.agregar(v, cont);
+			while(!aux.pilaVacia()) {
+				p.apilar(aux.tope());
+				aux.desapilar();
+			}
+		}
+		return ds;
+	}
+	
 
 }

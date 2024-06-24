@@ -7,11 +7,11 @@ Ejercicios a resolver:
 [] - 3
 [] - 4
 [] - 5
-[] - 6
+[X] - 6 (martin)
 [X] - 7 (Tomas)
 [X] - 8 (Tomas)
-[] - 9
-[] - 10
+[X] - 9 (martin)
+[X] - 10(martin)
 [X] - 11 (Diego)
 [] - 12
 [] - 13
