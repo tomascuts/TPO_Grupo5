@@ -11,15 +11,15 @@ Ejercicios a resolver:
 [X] - 7 (Tomas)
 [X] - 8 (Tomas)
 [X] - 9 (martin)
-[X] - 10(martin)
+[X] - 10 (martin)
 [X] - 11 (Diego)
-[X] - 12(martin)
-[X] - 13(martin)
-[] - 14
-[] - 15
+[X] - 12 (martin)
+[X] - 13 (martin)
+[X] - 14 (Tomas)
+[X] - 15 (Tomas)
 [X] - 16 (Diego)
 [X] - 17 (Diego)
 [X] - 18 (Diego)
 [X] - 19 (Diego)
-[] - 20
+[X] - 20 (Julio)
 
