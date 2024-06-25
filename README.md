@@ -4,8 +4,8 @@ Ejercicios a resolver:
 
 [X] - 1 (Tomas)
 [X] - 2 (Tomas)
-[] - 3
-[] - 4
+[X] - 3 (Julio)
+[X] - 4 (Julio)
 [] - 5
 [X] - 6 (martin)
 [X] - 7 (Tomas)
