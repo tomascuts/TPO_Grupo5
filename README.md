@@ -6,7 +6,7 @@ Ejercicios a resolver:
 [X] - 2 (Tomas)
 [X] - 3 (Julio)
 [X] - 4 (Julio)
-[] - 5
+[x] - 5 (Julio)
 [X] - 6 (martin)
 [X] - 7 (Tomas)
 [X] - 8 (Tomas)
