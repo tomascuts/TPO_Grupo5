@@ -4,17 +4,17 @@ Ejercicios a resolver:
 
 [X] - 1 (Tomas)
 [X] - 2 (Tomas)
-[] - 3
-[] - 4
+[X] - 3 (Julio)
+[X] - 4 (Julio)
 [] - 5
-[] - 6
+[X] - 6 (martin)
 [X] - 7 (Tomas)
 [X] - 8 (Tomas)
-[] - 9
-[] - 10
+[X] - 9 (martin)
+[X] - 10(martin)
 [X] - 11 (Diego)
-[] - 12
-[] - 13
+[X] - 12(martin)
+[X] - 13(martin)
 [] - 14
 [] - 15
 [X] - 16 (Diego)
