@@ -20,6 +20,6 @@ Ejercicios a resolver:
 [X] - 16 (Diego)
 [X] - 17 (Diego)
 [X] - 18 (Diego)
-[] - 19
+[X] - 19 (Diego)
 [] - 20
 
