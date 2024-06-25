@@ -13,6 +13,25 @@ import interfaz.ConjuntoTDA;
 
 public class TPO {
 
+
+	
+	public static void main(String[] args) {
+		
+
+		PilaTDA pila = (PilaTDA) new Pila();
+		pila.inicializa();	
+		
+		ConjuntoTDA ejercicio7 = ElementosRepetidosPila(pila);
+		
+		/****************/
+		
+		ColaTDA cola = (ColaTDA) new Cola();
+		cola.inicializar();
+		
+		ColaTDA ejercicio8 = ColaSinRepetidos(cola);
+
+	}
+	
 	
 	/****************/
 	/****  EJ: 6 ****/
@@ -40,23 +59,6 @@ public class TPO {
 	
 		
 		return porcentaje;
-	}
-	
-	public static void main(String[] args) {
-		
-
-		PilaTDA pila = (PilaTDA) new Pila();
-		pila.inicializa();	
-		
-		ConjuntoTDA ejercicio7 = ElementosRepetidosPila(pila);
-		
-		/****************/
-		
-		ColaTDA cola = (ColaTDA) new Cola();
-		cola.inicializar();
-		
-		ColaTDA ejercicio8 = ColaSinRepetidos(cola);
-
 	}
 	
 	
