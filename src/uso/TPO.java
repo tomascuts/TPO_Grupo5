@@ -7,11 +7,17 @@ import implementacion.PilaEstatica;
 import implementacion.ConjuntoEstatico;
 import interfaz.DiccionarioSimpleTDA;
 import interfaz.PilaTDA;
+import interfaz.ABBTDA;
 import interfaz.ColaTDA;
 import interfaz.ConjuntoTDA;
 
 public class TPO {
 
+	
+	/****************/
+	/****  EJ: 6 ****/
+	/****************/
+	
 	
 	public static float ejercicio6(PilaTDA p) {//el metodo es lineal puesto que posee un ciclo
 		PilaTDA aux = new PilaEstatica();
@@ -126,6 +132,11 @@ public class TPO {
 		return respuesta;
 	}
 	
+	/****************/
+	/****  EJ: 9 ****/
+	/****************/
+	
+	
 	public static ConjuntoTDA ejercicio9(ColaTDA c, PilaTDA p) {//el metodo es polinomico puesto que posee un ciclo dentro de otro
 		ConjuntoTDA res = new ConjuntoEstatico();
 		ConjuntoTDA auxC = new ConjuntoEstatico();
@@ -150,6 +161,10 @@ public class TPO {
 		
 		return res;
 	}
+	/****************/
+	/****  EJ: 10 ****/
+	/****************/
+	
 	
 	public static DiccionarioSimpleTDA ejercicio10(PilaTDA p) {//el metodo es polinomico puesto que posee un ciclo dentro de otro
 		DiccionarioSimpleTDA ds = new DiccionarioSimpleEstatico();
@@ -228,6 +243,38 @@ public class TPO {
 		        }
 		    }
 		
+	}
+	
+	/****************/
+	/****  EJ: 12 ****/
+	/****************/
+	
+	public static int ejercicio12(ABBTDA a) {
+		if(a.arbolVacio()) {
+			return 0;
+		}
+		if(a.raiz() %2!=0) {
+			return a.raiz()+ ejercicio12(a.hijoIzq()) + ejercicio12(a.hijoDer());
+		}
+		else {
+			return ejercicio12(a.hijoIzq()) + ejercicio12(a.hijoDer());
+		}
+		
+	}
+	
+	/****************/
+	/****  EJ: 13 ****/
+	/****************/
+	
+	public static int ejercicio13(ABBTDA a) {
+		if (a.arbolVacio()) {
+	        return 0; 
+		}if(a.hijoIzq().arbolVacio() && a.hijoDer().arbolVacio() && a.raiz() % 2 == 0) {
+			return 1 + ejercicio13(a.hijoIzq())+ ejercicio13(a.hijoDer());
+		}
+		else {
+			return ejercicio13(a.hijoIzq())+ ejercicio13(a.hijoDer());
+		}
 	}
 
 
