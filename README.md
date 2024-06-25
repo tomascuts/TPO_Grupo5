@@ -13,8 +13,8 @@ Ejercicios a resolver:
 [X] - 9 (martin)
 [X] - 10(martin)
 [X] - 11 (Diego)
-[] - 12
-[] - 13
+[X] - 12(martin)
+[X] - 13(martin)
 [] - 14
 [] - 15
 [X] - 16 (Diego)
