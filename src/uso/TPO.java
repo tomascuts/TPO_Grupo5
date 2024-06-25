@@ -277,5 +277,69 @@ public class TPO {
 		}
 	}
 
+	/****************/
+	/****  EJ: 14 ****/
+	/****************/
+	public static ConjuntoTDA verticesPuente(GrafoTDA grafo, int verticeOrigen, int verticeDestino) { 
+		ConjuntoTDA respuesta = (ConjuntoTDA) new Conjunto(); 
+		respuesta.inicializarConjunto();
+		
+		tda.ConjuntoTDA vertices = grafo.vertices();
+		
+		while(!vertices.conjuntoVacio()) 
+		{
+			int posibleVerticePuente = vertices.elegir(); 
+			
+			//Se pregunta si el vertice que estamos evaluando es puente. 
+			//Es decir, si tiene una arista desde verticeOrigen hasta ese vertice Y al mismo tiempo debe tener una arista desde
+			// ese vertice a verticeDestino
+			if(grafo.existeArista(verticeOrigen, posibleVerticePuente) && grafo.existeArista(posibleVerticePuente, verticeDestino)) {
+				
+				respuesta.agregar(posibleVerticePuente);
+			} 
+		}		
+		
+		return respuesta;
+	}
+	
+	/****************/
+	/****  EJ: 15 ****/
+	/****************/
+	public static int GradoVertice(GrafoTDA grafo, int vertice) { 
+
+	       int aristasSalientes = 0;
+	        int aristasEntrantes = 0;
+
+	        tda.ConjuntoTDA vertices = grafo.vertices();
+
+	        while (!vertices.conjuntoVacio()) {
+	            int vert = vertices.elegir();
+	            
+	            //Veo si el vertice que estoy evaluando tiene una arista hacia el vertice que recibo como parametro. 
+	            if(vert != vertice && grafo.existeArista(vert, vertice)) 
+	            {
+	            	aristasEntrantes++;
+	            	
+	            } //Veo si el vertice que recibo como parametro tiene una arista hacia el vertice que estoy evaluando
+	            else if(vert != vertice && grafo.existeArista(vertice, vert)) 
+	            {
+	            	aristasSalientes++;
+	            }
+	            else {
+	            	// En este caso el vertice es el mismo que el de entrada. Por lo que unico que evaluamos es si tiene un bucle.
+	            	// En caso de tener un bucle tiene una arista entrante y saliente a si misma.
+	            	if(grafo.existeArista(vert, vertice))
+	            	{
+		            	aristasSalientes ++;
+		            	aristasEntrantes ++;
+	            	}
+	            }
+	            
+	            vertices.sacar(vert);      
+	        }
+	        
+	        return aristasSalientes - aristasEntrantes;		
+	}
+
 
 }

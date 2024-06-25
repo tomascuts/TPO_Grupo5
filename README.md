@@ -6,20 +6,20 @@ Ejercicios a resolver:
 [X] - 2 (Tomas)
 [X] - 3 (Julio)
 [X] - 4 (Julio)
-[] - 5
+[x] - 5 (Julio)
 [X] - 6 (martin)
 [X] - 7 (Tomas)
 [X] - 8 (Tomas)
 [X] - 9 (martin)
-[X] - 10(martin)
+[X] - 10 (martin)
 [X] - 11 (Diego)
-[X] - 12(martin)
-[X] - 13(martin)
-[] - 14
-[] - 15
+[X] - 12 (martin)
+[X] - 13 (martin)
+[X] - 14 (Tomas)
+[X] - 15 (Tomas)
 [X] - 16 (Diego)
 [X] - 17 (Diego)
 [X] - 18 (Diego)
-[] - 19
-[] - 20
+[X] - 19 (Diego)
+[X] - 20 (Julio)
 
